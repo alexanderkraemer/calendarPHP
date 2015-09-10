@@ -19,7 +19,6 @@ class KalenderController extends Controller
         {
             $this->month = $month;
         }
-
         $this->months = [
             1  => "January",
             2  => "February",
@@ -36,7 +35,7 @@ class KalenderController extends Controller
         ];
         $cal = $this->render ();
 
-        return $cal;
+        return view ( 'kalender.view', compact ( 'cal' ) );
     }
 
     public function render ()
@@ -165,13 +164,9 @@ class KalenderController extends Controller
                  '/monat/' . $cMonth .'">';
         $html .= '>';
         $html .= '</a>';
-        $html .= '<a style="text-decoration:none; margin-left:80px;" href="' . url() .
-                 '/kalender">';
-        $html .= 'neuer Eintrag';
-        $html .= '</a>';
         $html .= '<a style="text-decoration:none; margin-right:80px;" class="pull-right" href="' . url() .
                  '/kalender">';
-        $html .= 'Heute';
+        $html .= 'Today';
         $html .= '</a>';
         $html .= '</h1>';
         $html .= '</div>';
@@ -179,13 +174,13 @@ class KalenderController extends Controller
         $html .= '<thead>';
         $html .= '<tr>';
         $html .= '<td style="text-align:center;">KW</td>';
-        $html .= '<td>Montag</td>';
-        $html .= '<td>Dienstag</td>';
-        $html .= '<td>Mittwoch</td>';
-        $html .= '<td>Donnerstag</td>';
-        $html .= '<td>Freitag</td>';
-        $html .= '<td>Samstag</td>';
-        $html .= '<td>Sonntag</td>';
+        $html .= '<td>Monday</td>';
+        $html .= '<td>Tuesday</td>';
+        $html .= '<td>Wednesday</td>';
+        $html .= '<td>Thursday</td>';
+        $html .= '<td>Friday</td>';
+        $html .= '<td>Saturday</td>';
+        $html .= '<td>Sunday</td>';
         $html .= '</tr>';
         $html .= '</thead>';
         $html .= '<tbody>';
