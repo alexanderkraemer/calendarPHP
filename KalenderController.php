@@ -19,23 +19,24 @@ class KalenderController extends Controller
         {
             $this->month = $month;
         }
+
         $this->months = [
-            1  => "Januar",
-            2  => "Februar",
-            3  => "März",
+            1  => "January",
+            2  => "February",
+            3  => "March",
             4  => "April",
-            5  => "Mai",
-            6  => "Juni",
-            7  => "Juli",
+            5  => "May",
+            6  => "June",
+            7  => "July",
             8  => "August",
             9  => "September",
-            10 => "Oktober",
+            10 => "October",
             11 => "November",
-            12 => "Dezember"
+            12 => "December"
         ];
         $cal = $this->render ();
 
-        return view ( 'kalender.view', compact ( 'cal' ) );
+        return $cal;
     }
 
     public function render ()
